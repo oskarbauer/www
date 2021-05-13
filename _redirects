@@ -1,16 +1,5 @@
 # Netlify redirects. See https://www.netlify.com/docs/redirects/
 
-/overview/introduction/            	/getting-started/
-/quickstart/                       	/getting-started/quick-start/
-/overview/quickstart/              	/getting-started/quick-start/
-/tutorials/installing-on-windows/  	/getting-started/installing/
-/tutorials/installing-on-mac/      	/getting-started/installing/
-/overview/installing/              	/getting-started/installing/
-/getting-started/install           	/getting-started/installing/
-/install/                          	/getting-started/installing/
-/overview/usage/                   	/getting-started/usage/
-/extras/livereload/                	/getting-started/usage/
-/doc/usage/                        	/getting-started/usage/
-/usage/                            	/getting-started/usage/
-/overview/source-directory/        	/getting-started/directory-structure/
+/layout/functions/                 	/functions/
+/templates/functions               	/functions/
 /release-notes/                    	/news/
