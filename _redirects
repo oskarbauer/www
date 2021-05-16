@@ -1,5 +1,3 @@
 # Netlify redirects. See https://www.netlify.com/docs/redirects/
 
-/layout/functions/                 	/functions/
-/templates/functions               	/functions/
 /release-notes/                    	/news/
