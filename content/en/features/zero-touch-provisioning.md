@@ -2,12 +2,13 @@
 autonumber
 hide footbox
 
+actor C as "Customer"
 participant PKI as "Manufacturer's PKI"
 participant D as "Device"
 participant CGW as "CoAP Gateway"
-participant IS as "Identity Store"
 participant DPS as "Device Provisioning Service"
-actor C as "Customer"
+participant IS as "Identity Store"
+participant AS as "OAuth2.0 Server"
 
 == Production ==
 PKI --> D: Set Manufacturer certificate
@@ -25,7 +26,7 @@ D -> DPS++: Identity Certificate Signing Request
 DPS --> DPS: Sign CSR using custom or self-signed CA
 DPS --> D: Unique Identity Certificate
 D -> DPS: Request plgd cloud provisioning data
-DPS --> IS++: Request Authorization Code
+DPS --> AS++: Request Authorization Code
 return Authorization Code
 return plgd Cloud endpoint, onboarding code, ...
 deactivate DPS
@@ -41,7 +42,7 @@ D -> CGW++  #aquamarine: Connect and authenticate mutually
 note right #aquamarine: TLS established with\nIdentity Certificate
 D -> CGW++: Sign Up
 group OAuth2.0 Authorization Code Grant Flow
-    CGW -> O ++: Verify and exchange authorization code for JWT access token
+    CGW -> AS ++: Verify and exchange authorization code for JWT access token
     return Ok\n(JWT Access Token, Refresh Token, ...)
 end
 CGW -> IS ++: Register and assign device to user
@@ -53,9 +54,6 @@ D -> CGW ++: Sign In
 CGW -> CGW: Validate JWT Access Token
 CGW -> IS ++: Is device registered?
 return Ok
-CGW -> EB: Subscribe to device & owner events
-CGW -> RA ++: Declare device as online
-return
 return Signed In
 
 == Certificate Renewal ==
