@@ -12,7 +12,7 @@ menu:
 toc: true
 ---
 
-C2C Gateway implements [Open Connectivity Foundation's Cloud API for Cloud Services](https://openconnectivity.org/specs/OCF_Cloud_API_For_Cloud_Services_Specification.pdf) providing API's to mirror user's devices to a different OCF standardized cloud.
+The C2C Gateway implements [Open Connectivity Foundation's Cloud API for Cloud Services](https://openconnectivity.org/specs/OCF_Cloud_API_For_Cloud_Services_Specification.pdf) providing APIs to mirror the user's devices to a different OCF standardized cloud.
 
 ## Docker Image
 
@@ -127,7 +127,7 @@ Plgd cloud uses MongoDB database as the owner's device store.
 | `taskQueue.size` | int | `Size of queue. If it exhausted, submit returns error.` | `2097152` |
 | `taskQueue.maxIdleTime` | string | `Sets up the interval time of cleaning up goroutines. Zero means never cleanup.` | `10m` |
 
-> Note that the string type related to time (i.e. timeout, idleConnTimeout, expirationTime) is decimal numbers, each with optional fraction and a unit suffix, such as "300ms", "1.5h" or "2h45m". Valid time units are "ns", "us", "ms", "s", "m", "h".
+> Note that the string type related to time (i.e. timeout, idleConnTimeout, expirationTime) is decimal numbers, each with an optional fraction and a unit suffix, such as "300ms", "1.5h" or "2h45m". Valid time units are "ns", "us", "ms", "s", "m", "h".
 
 ## API
 
@@ -143,11 +143,11 @@ Follow [OCF Cloud API For Cloud Services Specification](https://openconnectivity
 - subscribe to / unsubscribe from  events against a specific resource
 - [swagger](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/openconnectivityfoundation/core-extensions/ocfcloud-openapi/swagger2.0/oic.r.cloudopenapi.swagger.json)
 
-## How to try
+## How to try it out
 
 ### Steps
 
-1. Authorize the user: Request the user's authorization and redirect back to your application with an authorization code.
+1. Authorize the user: Request the user's authorization code and return to your application with the authorization code.
 2. Request tokens: Exchange your authorization code for tokens.
 3. Call your API: Use the retrieved Access Token to call your API.
 4. Refresh Tokens: Use a Refresh Token to request new tokens when the existing ones expire.
@@ -222,7 +222,7 @@ curl --request GET \
 
 ### Refresh the token
 
-You can use the Refresh Token to get a new Access Token. The application communicating with the C2C Endpoint needs a new Access Token only after the previous one expires. It's bad practice to call the endpoint to get a new Access Token every time you call an API, and pluggedin.cloud maintains rate limits that will throttle the amount of requests to the endpoint that can be executed using the same token from the same IP.
+You can use 'Refresh Token' to get a new Access Token. The application communicating with the C2C Endpoint needs a new Access Token only after the previous one expires. It's bad practice to call the endpoint to get a new Access Token every time you call an API, and pluggedin.cloud maintains rate limits on requests to the endpoint executed using the same token from the same IP, throttling requests beyond the limit.
 
 To refresh your token, make a POST request to the token endpoint, using grant_type=refresh_token.
 
@@ -239,7 +239,7 @@ curl --request POST \
 
 ### Device Onboarding
 
-To be able to see the devices through the `try.plgd.cloud` C2C API, first you need to onboard the device. When you have your device ready, go to the `https://plgd.dev` website and click `Try Live`. This redirects you to the `try.plgd.cloud Portal`.
+To see devices through the `try.plgd.cloud` C2C API, first you need to onboard the device. When you have your device ready, go to the `https://plgd.dev` website and click `Try Live`. This redirects you to the `try.plgd.cloud Portal`.
 
 First thing you need is an authorization code. In the `try.plgd.cloud Portal` go to `Devices` and click `Onboard Device`. This displays you the code needed to onboard the device. Values which should be set to the [coapcloudconf](https://github.com/openconnectivityfoundation/cloud-services/blob/c2c/swagger2.0/oic.r.coapcloudconf.swagger.json) device resource are:
 
