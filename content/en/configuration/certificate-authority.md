@@ -12,9 +12,9 @@ menu:
 toc: true
 ---
 
-This service is used to sign identity certificates for devices and [plgd-dev/sdk](https://github.com/plgd-dev/sdk) client.
+This service is used to sign identity certificates for devices and the [plgd-dev/sdk](https://github.com/plgd-dev/sdk) client.
 
-Initialization of the SDK requires an Identity Certificate issued by this service after successful user authorization. The SDK is then able to discover and configure the ownership as described [here](https://openconnectivity.org/specs/OCF_Security_Specification_v2.2.3.pdf#page=37). During this process, a CSR (Certificate Signing Request) is sent to the Certificate Authority which returns device's Identity Certificate.
+Initialization of the SDK requires an Identity Certificate issued by this service after successful user authorization. The SDK is then able to discover and configure ownership as described [here](https://openconnectivity.org/specs/OCF_Security_Specification_v2.2.3.pdf#page=37). During this process, a CSR (Certificate Signing Request) is sent to the Certificate Authority which returns the device's Identity Certificate.
 
 ## Docker Image
 
@@ -74,4 +74,4 @@ Signer configuration to issue identity certificates for devices or mobile applic
 | `signer.validFrom` | string | `The time from when the certificate is valid. (Format: https://github.com/karrick/tparse)` |  `"now-1h"` |
 | `signer.expiresIn` | string | `The time up to which the certificate is valid.` |  `"87600h"` |
 
-> Note that the string type related to time (i.e. timeout, idleConnTimeout, expirationTime) is decimal numbers, each with optional fraction and a unit suffix, such as "300ms", "1.5h" or "2h45m". Valid time units are "ns", "us", "ms", "s", "m", "h".
+> Note that the string type related to time (i.e. timeout, idleConnTimeout, expirationTime) is decimal numbers, each with an optional fraction and a unit suffix, such as "300ms", "1.5h" or "2h45m". Valid time units are "ns", "us", "ms", "s", "m", "h".
