@@ -12,7 +12,7 @@ menu:
 toc: true
 ---
 
-C2C Connector connects to other cloud implementing the [Open Connectivity Foundation's Cloud API for Cloud Services](https://openconnectivity.org/developer/specifications/) and mirror devices from this linked instance to yours.
+The C2C Connector connects to other clouds implementing the [Open Connectivity Foundation's Cloud API for Cloud Services](https://openconnectivity.org/developer/specifications/) and mirrors devices from this linked instance to yours.
 
 ## Docker Image
 
@@ -59,8 +59,8 @@ A configuration template is available in [cloud2cloud-connector/config.yaml](htt
 | `apis.http.authorization.http.tls.certFile` | string | `File path to certificate in PEM format.` | `""` |
 | `apis.http.authorization.http.tls.useSystemCAPool` | bool | `If true, use system certification pool.` | `false` |
 
-::: tip Audience
-You might have one client, but multiple APIs in the OAuth system. What you want to prevent is to be able to contact all the APIs of your system with one token. This audience allows you to request the token for a specific API. If you configure it to myplgdc2c.api in the Auth0, you have to set it here if you want to also validate it.
+::: Audience tip:
+You might have one client, but multiple APIs in the OAuth system. What you want to prevent is the ability to contact all the APIs of your system with one token. This audience allows you to request the token for a specific API. If you configure it to myplgdc2c.api in the Auth0, you have to set it here if you also want to validate it.
 :::
 
 ### Identity Store Client

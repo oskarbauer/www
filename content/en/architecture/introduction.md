@@ -12,7 +12,7 @@ menu:
 toc: true
 ---
 
-> The **Internet of Things (IoT)** is the network of physical devices, which are embedded with electronics, software, sensors, actuators, and connectivity for the purpose of enabling these things to connect and exchange data. Thus creating opportunities for more direct integration of the physical world into computer-based systems, resulting in efficiency improvements, economic benefits and reduced human intervention. _(Wikipedia, Internet of Things)_
+>The **Internet of Things (IoT)** is the network of physical devices, which are embedded with electronics, software, sensors, actuators, and connectivity for the purpose of enabling these things to connect and exchange data. Thus creating opportunities for more direct integration of the physical world into computer-based systems, resulting in efficiency improvements, economic benefits and reduced human intervention. _(Wikipedia, Internet of Things)_
 
 In other words, an IoT device is regularly subject to change, since it represents the world around it. It's up to the developer, how the world is represented through the device and processed by the application for your specific domain.  Technology should support the transfer of data in a standardized and secured way. The IoT platform can't limit you and can't set boundaries, which would limit evolution of your system.
 
